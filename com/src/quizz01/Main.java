@@ -1,19 +1,18 @@
-package com.src;
+package com.src.quizz01;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class Main {
 
     public static void main(String[] args) {
 
         try{
-            Path filePath = Path.of("com/src/Calc1.stk");
+            Path filePath = Path.of("com/src/quizz01/Calc1.stk");
             String content = Files.readString(filePath);
-            content = content.replaceAll("\n", "");
+            // System.out.print("Result: ");
             // System.out.println(content);
+            // content = content.replaceAll("\n", "");
 
             System.out.print("Result: ");
 

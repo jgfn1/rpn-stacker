@@ -1,4 +1,4 @@
-package com.src;
+package com.src.quizz01;
 
 import java.util.*;
 
@@ -10,11 +10,15 @@ class RPN_Stacker {
 
         boolean isOperand = false;
         int parsedNumber = 0;
-        for(int i = 0; i < expression.length(); i++){
+
+        String[] splittedExpression = expression.split("\n");
+        // System.out.println("splitted!");
+        // System.out.println(splittedExpression[2]);
+        for(int i = 0; i < splittedExpression.length; i++){
             // System.out.println("Read char:");
             // System.out.println(expression.charAt(i));
             try {
-                parsedNumber = Integer.parseInt(expression.substring(i, i+1));
+                parsedNumber = Integer.parseInt(splittedExpression[i]);
             }
             catch (NumberFormatException nfe) {
                 isOperand = true;
@@ -29,7 +33,7 @@ class RPN_Stacker {
                 // System.out.println(Arrays.toString(stack.toArray()));
                 int b = (int)stack.pop();
                 int a = (int)stack.pop();
-                switch(expression.charAt(i)){
+                switch(splittedExpression[i].charAt(0)){
                     case '+':
                         stack.push(a + b);
                         break;
